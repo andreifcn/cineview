@@ -1,0 +1,126 @@
+nav {
+  background-color:firebrick;
+  height: 65px;
+  width: 100%;
+  position: relative;
+}
+
+#index-link {
+  position: absolute;
+  color: white;
+  font-size: 45px;
+  top: -70%;
+  left: 1%;
+  text-decoration: none;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  float:right;
+  font-family: Calibri, sans-serif;
+  font-size: 45px;
+  color: white;
+  text-decoration: none;
+  margin-right: 5%;
+  vertical-align: to;
+}
+
+.movie-list {
+  margin-left: 0%;
+  position: absolute;
+}
+
+body {
+  background-color: black;
+}
+
+#movie-info {
+  color: white;
+  text-align: center;
+}
+
+#movie-image {
+  position: relative;
+  display: inline;
+  right: 5%;
+  top: 90px;
+}
+
+#movie-title {
+  display: inline-block;
+  white-space: nowrap;
+  display: inline;
+  color: white;
+  font-size: 300%;
+  left: -3%;
+}
+
+#movie-summary {
+  display: inline-block;
+  position: relative;
+  color: bl;
+  width: 30%;
+  height: 50%;
+  top: 100px;
+  right: 12%;
+  font-size: 16px;
+}
+
+#search-bar {
+  border-style: solid;
+  border-color: firebrick;
+  border: 1px solid firebrick;
+  position: relative;
+  left: 35%;
+  width: 600px;
+  height: 30px;
+  margin-top: 3%;
+  background-color: black;
+  text-align: center;
+  color: firebrick;
+}
+
+.episode-details {
+  color: red;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.movie-image{
+  display: inline-block;
+  vertical-align: middle;
+  height: 295px;
+  width: 210px;
+}
+
+.episode-pic {
+  width: 250px;
+  height: 140px;
+}
+
+.episode-info {
+  vertical-align: middle;;
+}
+
+.season-link {
+  display: inline;
+  margin-left: 1%;
+  color: red;
+  font-size: 30px;
+}
+
+span {
+    height: 140 px;            
+    display: inline;
+    vertical-align: middle;
+}
+
+h1 {
+  font-size: 50px;
+  margin-left: 5%;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}

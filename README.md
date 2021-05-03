@@ -1,2 +1,2 @@
 # cineview
-personal project
+version 0.1 - first release

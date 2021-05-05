@@ -2,9 +2,9 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/header/NavBar/NavBar.js';
 import Home from './components/body/Home.js';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MoviePage from './components/body/MoviePage';
 import Episodes from './components/body/Episodes';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {

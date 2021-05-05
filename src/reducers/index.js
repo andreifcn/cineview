@@ -1,9 +1,11 @@
 import search from './search';
+import setMovies from './setMovies';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
 
-    search
+    search,
+    setMovies
 });
 
 export default allReducers;

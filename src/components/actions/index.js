@@ -12,3 +12,11 @@ export const clearSearch = () => {
         type: 'CLEARSEARCH'
     };
 };
+
+export const setMoviesData = (data) => {
+
+    return {
+        type: 'SETMOVIESDATA',
+        payload: data
+    };
+};

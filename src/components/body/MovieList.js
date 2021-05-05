@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import AllMovies from './AllMovies';
 import UpcomingEpisodes from './UpcomingEpisodes';
+import { useSelector, useDispatch } from 'react-redux';
 
 const MovieList = () => {
 
-    const [moviesData, setMoviesData] = useState([]);
-
+    let moviesData = '';
+    const setData = useSelector(state => state.setMoviesData);
+    const dispatch = useDispatch();
+  
     useEffect(() => {
 
         fetchMoviesData();
@@ -20,15 +23,16 @@ const MovieList = () => {
             .then(response => response.json()),
             await fetch('http://api.tvmaze.com/shows')
             .then(response => response.json())
-        ]).then(responses => setMoviesData(responses));
+        ]).then(responses => moviesData = responses);
     }
-
+    console.log(moviesData)
+    
     return (
         <div className='movie-list'>
             <h1 style={{color: 'white'}}>Upcoming Today</h1>
-            {moviesData[0] && <UpcomingEpisodes moviesData={moviesData[0]} />}
+            
             <h1 style={{color: 'white'}}>All Movies</h1>
-            {moviesData[1] && <AllMovies moviesData={moviesData[1]} />}
+            
         </div>
     )
 }

@@ -8,11 +8,13 @@ import { Provider } from 'react-redux';
 import allReducers from './reducers/index'
 
 
-let stateStore = createStore(allReducers);
+let stateStore = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+stateStore.subscribe(() => console.log(stateStore.getState()));
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={stateStore} >
+        <Provider store={stateStore}>
             <App />
         </Provider>
     </React.StrictMode>,

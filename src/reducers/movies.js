@@ -1,12 +1,12 @@
-const setMoviesDataReducer = (state = [], action) => {
+const moviesReducer = (state = [], action) => {
 
     switch(action.type) {
 
         case 'SETMOVIESDATA':
             return state = action.payload;
         default:
-            return state = ''
+            return state;
     };
 };
 
-export default setMoviesDataReducer;
+export default moviesReducer;

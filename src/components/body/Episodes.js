@@ -1,9 +1,12 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setEpisodesData } from '../actions';
 
 const Episodes = ({ match }) => {
 
-    const [episodes, setEpisodesData] = useState('');
+    const episodes = useSelector(state => state.episodes);
+    const dispatch = useDispatch();
     const movieID = match.params.id.match(/\d+/);
 
     useEffect(() => {
@@ -15,8 +18,7 @@ const Episodes = ({ match }) => {
 
         const fetchEpisodesData = await fetch(`http://api.tvmaze.com/seasons/${movieID}/episodes`);
         const data = await fetchEpisodesData.json();
-        console.log(data)
-        return setEpisodesData(data);
+        return dispatch(setEpisodesData(data));
     }
 
     return (

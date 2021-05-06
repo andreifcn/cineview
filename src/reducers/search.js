@@ -6,11 +6,8 @@ const searchReducer = (state = [], action) => {
         case 'SEARCH':
             return state = action.payload;
         
-        case 'CLEARSEARCH':
-            return state = [];
-
         default:
-            return state = [];
+            return state;
     }
 }
 

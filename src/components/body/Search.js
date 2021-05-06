@@ -6,8 +6,6 @@ const Search = () => {
 
     const searchData = useSelector(state => state.search);
     const dispatch = useDispatch();
-    console.log(searchData);
-
 
     return (
         <div id='search-box'>

@@ -105,9 +105,9 @@ body {
 
 .season-link {
   display: inline;
-  margin-left: 1%;
   color: red;
-  font-size: 30px;
+  margin-right: 0.5%;
+  font-size: 20px;
 }
 
 span {

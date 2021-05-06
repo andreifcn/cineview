@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const UpcomingEpisodes = ({ moviesData }) => {
 
-
-
     return moviesData.map(episode => {
 
         return <Link to={`/MoviePage/:id${episode.show.id}`}>

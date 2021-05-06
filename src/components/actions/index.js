@@ -6,17 +6,26 @@ export const search = (data) => {
     };
 };
 
-export const clearSearch = () => {
-
-    return {
-        type: 'CLEARSEARCH'
-    };
-};
-
 export const setMoviesData = (data) => {
 
     return {
         type: 'SETMOVIESDATA',
+        payload: data
+    };
+};
+
+export const setMovieData = (data) => {
+
+    return {
+        type: 'SETMOVIEDATA',
+        payload: data
+    };
+};
+
+export const setEpisodesData = (data) => {
+
+    return {
+        type: 'SETEPISODESDATA',
         payload: data
     };
 };

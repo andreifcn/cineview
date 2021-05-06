@@ -29,3 +29,11 @@ export const setEpisodesData = (data) => {
         payload: data
     };
 };
+
+export const searchResults = (data) => {
+
+    return {
+        type: 'SETSEARCHRESULTS',
+        payload: data
+    };
+};

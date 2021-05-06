@@ -1,5 +1,3 @@
-import react from 'react';
-
 const searchReducer = (state = [], action) => {
 
     switch(action.type) {

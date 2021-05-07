@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { setMovieData } from '../actions';
+import { Link, useHistory } from 'react-router-dom';
+import { setMovieData } from '../../actions';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -9,6 +9,7 @@ const MoviePage = ({ match }) => {
     const movieID = match.params.id.match(/\d+/);
     const movieData = useSelector(state => state.movie);
     const dispatch = useDispatch();
+    let history = useHistory();
 
     useEffect(() => {
         
@@ -28,7 +29,8 @@ const MoviePage = ({ match }) => {
     return (
         <div id='movie-page'>
             <div id='movie-info'>
-                <img id='movie-image' src={movieData[0] && movieData[0].image !== null ? 
+                <button onClick={() => history.goBack()}>Back</button>
+                <img className='movie-image' src={movieData[0] && movieData[0].image !== null ? 
                     movieData[0].image.medium 
                     : 'https://www.kevingage.com/assets/clapboard.png'} />
                 <h1 id='movie-title'>{movieData[0] && movieData[0].name}</h1>

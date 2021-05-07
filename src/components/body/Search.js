@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { search, searchResults } from '../actions'
+import { search, searchResults } from '../../actions';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
 
@@ -11,14 +12,13 @@ const Search = () => {
     useEffect(() => {
 
         fetchSearchResults();
-    }, []);
+    }, [searchQuery]);
 
     const fetchSearchResults = async () => {
 
         const fetchData = await fetch(`http://api.tvmaze.com/search/shows?q=${searchQuery}`);
         const data = await fetchData.json();
-        console.log(data)
-
+        
         return dispatch(searchResults(data));
     }
 
@@ -29,7 +29,18 @@ const Search = () => {
                 onChange={e => dispatch(search(e.target.value = e.target.value.toLocaleLowerCase()))}
                 type='text' placeholder='Search for a movie...'
             />
-            {searchResults[0] && <p style={{color: 'yellow'}}>OK</p>}
+            <div id='search-results'>
+                {showSearchResults && showSearchResults.map(movie => {
+
+                    return <span>
+                        <Link to={`/MoviePage/:id${movie.show.id}`}>
+                            {movie.show.image !== null ?
+                            <img src={movie.show.image.medium} />
+                            : ''}
+                        </Link>
+                    </span>
+                })}
+            </div>
         </div>
     );
 };

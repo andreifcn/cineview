@@ -1,9 +1,11 @@
 import './App.css';
 import React from 'react';
-import NavBar from './components/header/NavBar/NavBar.js';
+import NavBar from './components/header/NavBar/NavBar';
 import Home from './components/body/Home.js';
 import MoviePage from './components/body/MoviePage';
-import Episodes from './components/body/Episodes';
+import SeasonEpisodes from './components/body/SeasonEpisodes';
+import AllMovies from './components/body/AllMovies';
+import AllUpcomingEpisodes from './components/body/AllUpcomingEpisodes';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -15,8 +17,10 @@ function App() {
                     <NavBar />
                     <Switch>
                     <Route path='/' exact component={Home} />
+                    <Route path='/AllUpcoming/' exact component={AllUpcomingEpisodes} />
+                    <Route path='/AllMovies/' exact component={AllMovies} />
                     <Route path='/MoviePage/:id/' exact component={MoviePage} />
-                    <Route path='/MoviePage/:id/Seasons/:id/Episodes/' component={Episodes} /> 
+                    <Route path='/MoviePage/:id/Seasons/:id/Episodes/' component={SeasonEpisodes} /> 
                     </Switch> 
              </div>
         </Router>

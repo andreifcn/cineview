@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import AllMovies from './AllMovies';
+import React, { useEffect } from 'react';
+import Movies from './Movies';
 import UpcomingEpisodes from './UpcomingEpisodes';
-import { useSelector, useDispatch } from 'react-redux';
-import { setMoviesData } from '../actions';
+import { useDispatch } from 'react-redux';
+import { setMoviesData } from '../../actions';
+import { Link } from 'react-router-dom';
 
 const MovieList = () => {
 
-    const moviesData = useSelector(state => state.movies);
     const dispatch = useDispatch();
   
     useEffect(() => {
@@ -26,14 +26,14 @@ const MovieList = () => {
         ]).then(responses => dispatch(setMoviesData(responses)));
     }
     
-    return (
-        <div className='movie-list'>
+    return <div className='movie-list'>
             <h1 style={{color: 'white'}}>Upcoming Today</h1>
-            {moviesData[0] && <UpcomingEpisodes moviesData={moviesData[0]} />}
-            <h1 style={{color: 'white'}}>All Movies</h1>
-            {moviesData[1] && <AllMovies moviesData={moviesData[1]} />}
+            <Link to={'/AllUpcoming/'}><p style={{color: 'white'}}>+See All</p></Link>
+            <UpcomingEpisodes />
+            <h1 style={{color: 'white'}}>Movies</h1>
+            <Link to={'/AllMovies/'}><p style={{color: 'white'}}>+See All</p></Link>
+            <Movies />
         </div>
-    )
 }
 
 export default MovieList;

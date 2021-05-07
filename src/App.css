@@ -17,7 +17,6 @@ nav {
 .link {
   display: inline-block;
   position: relative;
-  float:right;
   font-family: Calibri, sans-serif;
   font-size: 45px;
   color: white;
@@ -79,6 +78,10 @@ body {
   background-color: black;
   text-align: center;
   color: firebrick;
+}
+
+#search-results {
+  background-color: #1a1a19;
 }
 
 .episode-details {

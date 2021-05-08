@@ -12,11 +12,10 @@ const UpcomingEpisodes = ({ displayItems }) => {
 
     }
     
-    return <div>
-        {episodesData && episodesData.slice(0, maxItems).map(episode => {
+    return <div className='upcoming-episodes'>
+            {episodesData && episodesData.slice(0, maxItems).map(episode => {
 
-            return <Link to={`/MoviePage/:id${episode.show.id}`}>
-
+                return <Link to={`/MoviePage/:id${episode.show.id}`}>
                         <img 
                         className='movie-image'
                         src={episode.show.image !== null ?
@@ -24,7 +23,7 @@ const UpcomingEpisodes = ({ displayItems }) => {
                             : 'https://popcornusa.s3.amazonaws.com/placeholder-movieimage.png'}
                         alt='movie' />
                     </Link>
-        })}
+            })}
     </div>
 };
 

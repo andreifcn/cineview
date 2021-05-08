@@ -9,7 +9,7 @@ const MoviePage = ({ match }) => {
     const movieData = useSelector(state => state.movie);
     const dispatch = useDispatch();
     let history = useHistory();
-
+    
     useEffect(() => {
         
         fetchMovieData();
@@ -24,19 +24,22 @@ const MoviePage = ({ match }) => {
             .then(response => response.json())
         ]).then(responses => dispatch(setMovieData(responses)));
     }
-    
+
     return (
         <div id='movie-page'>
+            <button className='back-button' onClick={history.goBack}>Back</button>
             <div id='movie-info'>
-                <button onClick={history.goBack}>Back</button>
-                <img className='movie-image' src={movieData[0] && movieData[0].image !== null ? 
+                <img className='movie-page-image' src={movieData[0] && movieData[0].image !== null ? 
                     movieData[0].image.medium 
                     : 'https://www.kevingage.com/assets/clapboard.png'} />
-                <h1 id='movie-title'>{movieData[0] && movieData[0].name}</h1>
-                <h2 id='movie-summary'>{movieData[0] && movieData[0].summary}</h2>
+                <h2 className='movie-page-title'>{movieData[0] && movieData[0].name}</h2>
+                <p className='movie-page-summary'>{movieData[0] && movieData[0].summary}</p>
+                <p id='movie-page-premiered'>Premiered: {movieData[0] && movieData[0].premiered}</p>
+                <p id='movie-page-genre'>Genre: {movieData[0] && movieData[0].genres[0]}</p>
+                <p id='imdb-id'>IMDB ID: {movieData[0] && movieData[0].externals.imdb}</p>
             </div>
             <div id='movie-seasons'>
-                <h2 style={{color:   'white'}}>Seasons</h2>
+                <h2>Seasons</h2>
                 {movieData[1] && movieData[1].map(season => {
 
                     return  <Link to={`/MoviePage/:id${movieID}/Seasons/${season.id}/Episodes`}>

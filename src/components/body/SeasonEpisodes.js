@@ -25,7 +25,8 @@ const SeasonEpisodes = ({ match }) => {
 
     return (
         <div id='episodes-list'>
-            <button id='back-button' onClick={history.goBack}>Back</button>
+            <button className='back-button' onClick={history.goBack}>Back</button>
+            <h1 className='category-title-all'>Season Episodes</h1>
             {episodes && episodes.map(episode => {
 
                 return <div className='episode-info'>
@@ -40,7 +41,7 @@ const SeasonEpisodes = ({ match }) => {
                                 <h4 id='episode-title'>{episode.number}. {episode.name}</h4>
                                 <p className='episode-summary'>{episode.summary}</p>
                             </span>
-                        </div>
+                </div>
             })}
         </div>
     )

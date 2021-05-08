@@ -7,12 +7,14 @@ const Movies = ({ displayItems }) => {
 
     return <div className='movie-list'>
         {moviesData && moviesData.slice(0, displayItems).map(movie => {
-        
+
             return <Link to={`/MoviePage/:id${movie.id}`}>
                     <img 
-                    id={movie.name}
-                    src={movie.image.medium}
-                    alt='movie' />
+                        id={movie.name}
+                        className='movie-image'
+                        src={movie.image !== null ? movie.image.medium
+                        : 'https://popcornusa.s3.amazonaws.com/placeholder-movieimage.png'}
+                        alt='movie' />
                 </Link>
         })}
     </div>

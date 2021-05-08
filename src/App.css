@@ -15,55 +15,19 @@ nav {
 }
 
 .link {
-  display: inline-block;
+  float:right;
   position: relative;
   font-family: Calibri, sans-serif;
   font-size: 45px;
   color: white;
   text-decoration: none;
-  margin-right: 5%;
-  vertical-align: to;
+  top: -45px;
+  margin-right: 2%;
 }
 
 .movie-list {
-  margin-left: 0%;
-  position: absolute;
-}
-
-body {
-  background-color: black;
-}
-
-#movie-info {
-  color: white;
-  text-align: center;
-}
-
-#movie-image {
   position: relative;
-  display: inline;
-  right: 5%;
-  top: 90px;
-}
-
-#movie-title {
-  display: inline-block;
-  white-space: nowrap;
-  display: inline;
-  color: white;
-  font-size: 300%;
-  left: -3%;
-}
-
-#movie-summary {
-  display: inline-block;
-  position: relative;
-  color: bl;
-  width: 30%;
-  height: 50%;
-  top: 100px;
-  right: 12%;
-  font-size: 16px;
+  margin-bottom: 1%;
 }
 
 #search-bar {
@@ -80,11 +44,119 @@ body {
   color: firebrick;
 }
 
+body {
+  background-color: black;
+}
+
+.see-all-movies {
+  position: relative;
+  right: 160px;
+  bottom: -10px;
+  font-size: 40px;
+  text-align: right;
+  text-decoration-color:  firebrick;
+  color: firebrick;
+}
+
+#search-box {
+  margin-bottom: -2%;
+}
+.category-title {
+  position: relative;
+  text-align: left;
+  bottom: -110px;
+  font-size: 60px;
+  margin-left: 5%;
+  color: white;
+}
+
+.category-title-all {
+  float:inherit;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+}
+
+.back-button {
+  position: relative;
+  float: left;
+  background-color: black;
+  border: 1px solid black;
+  color: firebrick;
+  left: 23%;
+  top: 11px;
+  font-size: 50px;
+}
+
+.all-movie-list {
+  display: inline-block;
+  position: relative;
+}
+
+
 #search-results {
   background-color: #1a1a19;
+  margin-top: 2%;
+}
+
+#movie-page {
+  position: relative;
+  text-align: center;
+}
+
+#movie-info {
+  align-items: center;
+}
+
+.movie-page-image {
+  position: absolute;
+  left: 30%;
+  top: 25px;
+}
+
+.movie-page-title {
+  position: absolute;
+  color: white;
+  top: -70%;
+  left: 42%;
+  font-size: 400%;
+}
+
+.movie-page-summary {
+  position:absolute;
+  color: white;
+  width: 38%;
+  height: 50%;
+  top: 300%;
+  left: 41%;
+  font-size: 16px;
+}
+
+#movie-page-genre {
+  position: absolute;
+  color: blue;
+  font-size: 40px;
+  top: 35px;
+  left: 42%;
+}
+
+#imdb-id {
+  position: absolute;
+  color: orchid;
+  font-size: 20px;
+  top: 130px;
+  left: 42%;
+}
+
+#movie-page-premiered {
+  position: absolute;
+  color: yellow;
+  left: 42%;
+  top: 180px;
 }
 
 .episode-details {
+  position: absolute;
   color: red;
   display: inline-block;
   vertical-align: middle;
@@ -95,6 +167,15 @@ body {
   vertical-align: middle;
   height: 295px;
   width: 210px;
+  transition: transform .2s;
+}
+
+.movie-image:hover {
+  transform: scale(1.1);
+}
+
+#movie-seasons {
+  text-align: center;
 }
 
 .episode-pic {
@@ -102,27 +183,14 @@ body {
   height: 140px;
 }
 
-.episode-info {
-  vertical-align: middle;;
-}
-
 .season-link {
+  color: black;
+  position: absolute;
   display: inline;
-  color: red;
   margin-right: 0.5%;
   font-size: 20px;
 }
 
-span {
-    height: 140 px;            
-    display: inline;
-    vertical-align: middle;
-}
-
-h1 {
-  font-size: 50px;
-  margin-left: 5%;
-}
 
 textarea:focus, input:focus{
   outline: none;

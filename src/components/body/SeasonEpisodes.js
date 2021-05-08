@@ -1,5 +1,5 @@
-import React from 'react'
-import { useEffect } from 'react';
+import { React, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setEpisodesData } from '../../actions';
 
@@ -7,6 +7,7 @@ const SeasonEpisodes = ({ match }) => {
 
     const episodes = useSelector(state => state.episodes);
     const dispatch = useDispatch();
+    const history = useHistory();
     const movieID = match.params.id.match(/\d+/);
 
     useEffect(() => {
@@ -24,6 +25,7 @@ const SeasonEpisodes = ({ match }) => {
 
     return (
         <div id='episodes-list'>
+            <button id='back-button' onClick={history.goBack}>Back</button>
             {episodes && episodes.map(episode => {
 
                 return <div className='episode-info'>

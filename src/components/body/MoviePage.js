@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { setMovieData } from '../../actions';
-import { useEffect } from 'react';
+import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 const MoviePage = ({ match }) => {
@@ -29,7 +28,7 @@ const MoviePage = ({ match }) => {
     return (
         <div id='movie-page'>
             <div id='movie-info'>
-                <button onClick={() => history.goBack()}>Back</button>
+                <button onClick={history.goBack}>Back</button>
                 <img className='movie-image' src={movieData[0] && movieData[0].image !== null ? 
                     movieData[0].image.medium 
                     : 'https://www.kevingage.com/assets/clapboard.png'} />

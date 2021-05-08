@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Movies = () => {
+const Movies = ({ displayItems }) => {
 
-    const moviesData = useSelector(state => state.movies);
+    const moviesData = useSelector(state => state.movies[1]);
 
     return <div className='movie-list'>
-        {moviesData[1] && moviesData[1].slice(0, 10).map(movie => {
+        {moviesData && moviesData.slice(0, displayItems).map(movie => {
         
             return <Link to={`/MoviePage/:id${movie.id}`}>
                     <img 

@@ -35,7 +35,7 @@ const Search = () => {
                     return <span>
                         <Link to={`/MoviePage/:id${movie.show.id}`}>
                             {movie.show.image !== null ?
-                            <img src={movie.show.image.medium} />
+                            <img className='movie-image' src={movie.show.image.medium} />
                             : ''}
                         </Link>
                     </span>

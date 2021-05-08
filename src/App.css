@@ -117,18 +117,18 @@ body {
 .movie-page-title {
   position: absolute;
   color: white;
-  top: -70%;
+  top: -60%;
   left: 42%;
-  font-size: 400%;
+  font-size: 350%;
 }
 
 .movie-page-summary {
   position:absolute;
   color: white;
   width: 38%;
-  height: 50%;
+  height: 350px;
   top: 300%;
-  left: 41%;
+  left: 42%;
   font-size: 16px;
 }
 
@@ -189,6 +189,11 @@ body {
   display: inline;
   margin-right: 0.5%;
   font-size: 20px;
+}
+
+.episode-info {
+  text-align: center;
+  background-color: gray;
 }
 
 

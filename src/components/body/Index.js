@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './Search.js';
 import MovieList from './MovieList.js';
  
-const Home = () => {
+const Index = () => {
 
     return (
         <div id='main'>
@@ -12,4 +12,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Index;

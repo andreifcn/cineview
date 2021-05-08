@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import NavBar from './components/header/NavBar/NavBar';
-import Home from './components/body/Home.js';
+import Index from './components/body/Index.js';
 import MoviePage from './components/body/MoviePage';
 import SeasonEpisodes from './components/body/SeasonEpisodes';
 import Movies from './components/body/Movies';
@@ -16,7 +16,7 @@ function App() {
             <div id="main">
                     <NavBar />
                     <Switch>
-                    <Route path='/' exact component={Home} />
+                    <Route path='/' exact component={Index} />
                     <Route path='/AllUpcoming/' exact component={UpcomingEpisodes} />
                     <Route path='/AllMovies/' exact component={Movies} />
                     <Route path='/MoviePage/:id/' exact component={MoviePage} />

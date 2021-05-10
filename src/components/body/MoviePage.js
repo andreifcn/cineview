@@ -6,14 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 const MoviePage = ({ match }) => {
 
     const movieID = match.params.id.match(/\d+/);
-    const movieData = useSelector(state => state.movie);
+    const movieData = useSelector(state => state.movie[0]);
+    const seasonsData = useSelector(state => state.movie[1]);
     const dispatch = useDispatch();
     let history = useHistory();
     
     useEffect(() => {
         
         fetchMovieData();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const fetchMovieData = async () => {
 
@@ -29,20 +30,22 @@ const MoviePage = ({ match }) => {
         <div id='movie-page'>
             <button className='back-button' onClick={history.goBack}>Back</button>
             <div id='movie-info'>
-                <img className='movie-page-image' src={movieData[0] && movieData[0].image !== null ? 
-                    movieData[0].image.medium 
-                    : 'https://www.kevingage.com/assets/clapboard.png'} />
-                <h2 className='movie-page-title'>{movieData[0] && movieData[0].name}</h2>
-                <p className='movie-page-summary'>{movieData[0] && movieData[0].summary}</p>
-                <p id='movie-page-premiered'>Premiered: {movieData[0] && movieData[0].premiered}</p>
-                <p id='movie-page-genre'>Genre: {movieData[0] && movieData[0].genres[0]}</p>
-                <p id='imdb-id'>IMDB ID: {movieData[0] && movieData[0].externals.imdb}</p>
+                <img className='movie-page-image'
+                    src={movieData.image !== null ? 
+                        movieData.image.medium 
+                        : 'https://www.kevingage.com/assets/clapboard.png'}
+                    alt='movie-poster' />
+                <h2 className='movie-page-title'>{movieData.name}</h2>
+                <p className='movie-page-summary'>{movieData.summary.innerHTML}</p>
+                <p id='movie-page-premiered'>Premiered: {movieData.premiered}</p>
+                <p id='movie-page-genre'>Genre: {movieData.genres[0]}</p>
+                <p id='imdb-id'>IMDB ID: {movieData.externals.imdb}</p>
             </div>
             <div id='movie-seasons'>
                 <h2>Seasons</h2>
-                {movieData[1] && movieData[1].map(season => {
+                {seasonsData.map((season, index) => {
 
-                    return  <Link to={`/MoviePage/:id${movieID}/Seasons/${season.id}/Episodes`}>
+                    return  <Link key={index} to={`/MoviePage/:id${movieID}/Seasons/${season.id}/Episodes`}>
                                 <p className='season-link'>{season.number}</p>
                             </Link>
                 })};

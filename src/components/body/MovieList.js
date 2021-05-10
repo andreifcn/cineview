@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { React, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMoviesData } from '../../actions';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ const MovieList = () => {
     useEffect(() => {
 
         fetchMoviesData();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const fetchMoviesData = async () => {
 

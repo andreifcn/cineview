@@ -61,6 +61,11 @@ body {
 #search-box {
   margin-bottom: -2%;
 }
+
+#search-bar::-webkit-search-cancel-button{
+  color: red; 
+}
+
 .category-title {
   position: relative;
   text-align: left;

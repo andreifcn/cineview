@@ -12,7 +12,7 @@ const Search = () => {
     useEffect(() => {
 
         fetchSearchResults();
-    }, [searchQuery]);
+    }, [searchQuery]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const fetchSearchResults = async () => {
 
@@ -26,16 +26,17 @@ const Search = () => {
         <div id='search-box'>
             <input 
                 id='search-bar' 
+                value={searchQuery}
                 onChange={e => dispatch(search(e.target.value = e.target.value.toLocaleLowerCase()))}
-                type='text' placeholder='Search for a movie...'
+                type='search' placeholder='Search for a movie...'
             />
             <div id='search-results'>
-                {showSearchResults && showSearchResults.map(movie => {
+                {showSearchResults && showSearchResults.map((movie, index) => {
 
-                    return <span>
+                    return <span key={index}>
                         <Link to={`/MoviePage/:id${movie.show.id}`}>
                             {movie.show.image !== null ?
-                            <img className='movie-image' src={movie.show.image.medium} />
+                            <img className='movie-image' src={movie.show.image.medium} alt='movie-poster' />
                             : ''}
                         </Link>
                     </span>

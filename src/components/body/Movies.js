@@ -6,9 +6,9 @@ const Movies = ({ displayItems }) => {
     const moviesData = useSelector(state => state.movies[1]);
 
     return <div className='movie-list'>
-        {moviesData && moviesData.slice(0, displayItems).map(movie => {
+        {moviesData && moviesData.slice(0, displayItems).map((movie, index) => {
 
-            return <Link to={`/MoviePage/:id${movie.id}`}>
+            return <Link key={index} to={`/MoviePage/:id${movie.id}`}>
                     <img 
                         id={movie.name}
                         className='movie-image'

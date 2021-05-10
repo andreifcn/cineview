@@ -13,7 +13,7 @@ const SeasonEpisodes = ({ match }) => {
     useEffect(() => {
 
         fetchEpisodesData();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const fetchEpisodesData = async () => {
 
@@ -27,9 +27,9 @@ const SeasonEpisodes = ({ match }) => {
         <div id='episodes-list'>
             <button className='back-button' onClick={history.goBack}>Back</button>
             <h1 className='category-title-all'>Season Episodes</h1>
-            {episodes && episodes.map(episode => {
+            {episodes && episodes.map((episode, index) => {
 
-                return <div className='episode-info'>
+                return <div key={index} className='episode-info'>
                             <span className='movie-image'>
                                 {episode.image !== null ? 
                                     <img className='episode-pic' src={episode.image.medium} 

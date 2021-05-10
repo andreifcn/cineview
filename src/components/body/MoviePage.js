@@ -36,7 +36,8 @@ const MoviePage = ({ match }) => {
                         : 'https://www.kevingage.com/assets/clapboard.png'}
                     alt='movie-poster' />
                 <h2 className='movie-page-title'>{movieData && movieData.name}</h2>
-                <p className='movie-page-summary'>{movieData && movieData.summary.innerHTML}</p>
+                <div className='movie-page-summary'
+                    dangerouslySetInnerHTML={{ __html: movieData && movieData.summary }} />
                 <p id='movie-page-premiered'>Premiered: {movieData && movieData.premiered}</p>
                 <p id='movie-page-genre'>Genre: {movieData && movieData.genres[0]}</p>
                 <p id='imdb-id'>IMDB ID: {movieData && movieData.externals.imdb}</p>

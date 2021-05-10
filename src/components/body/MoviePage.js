@@ -31,7 +31,7 @@ const MoviePage = ({ match }) => {
             <button className='back-button' onClick={history.goBack}>Back</button>
             <div id='movie-info'>
                 <img className='movie-page-image'
-                    src={movieData.image !== null ? 
+                    src={movieData && movieData.image !== null ? 
                         movieData.image.medium 
                         : 'https://www.kevingage.com/assets/clapboard.png'}
                     alt='movie-poster' />

@@ -19,9 +19,9 @@ const MoviePage = ({ match }) => {
     const fetchMovieData = async () => {
 
         Promise.all([
-            await fetch(`http://api.tvmaze.com/shows/${movieID}`)
+            await fetch(`https://api.tvmaze.com/shows/${movieID}`)
             .then(response => response.json()),
-            await fetch(`http://api.tvmaze.com/shows/${movieID}/seasons`)
+            await fetch(`https://api.tvmaze.com/shows/${movieID}/seasons`)
             .then(response => response.json())
         ]).then(responses => dispatch(setMovieData(responses)));
     }

@@ -17,7 +17,7 @@ const SeasonEpisodes = ({ match }) => {
 
     const fetchEpisodesData = async () => {
 
-        const fetchEpisodesData = await fetch(`http://api.tvmaze.com/seasons/${movieID}/episodes`);
+        const fetchEpisodesData = await fetch(`https://api.tvmaze.com/seasons/${movieID}/episodes`);
         const data = await fetchEpisodesData.json();
         
         return dispatch(setEpisodesData(data));

@@ -16,7 +16,7 @@ const Search = () => {
 
     const fetchSearchResults = async () => {
 
-        const fetchData = await fetch(`http://api.tvmaze.com/search/shows?q=${searchQuery}`);
+        const fetchData = await fetch(`https://api.tvmaze.com/search/shows?q=${searchQuery}`);
         const data = await fetchData.json();
         
         return dispatch(searchResults(data));

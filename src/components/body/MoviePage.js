@@ -43,7 +43,7 @@ const MoviePage = ({ match }) => {
             </div>
             <div id='movie-seasons'>
                 <h2>Seasons</h2>
-                {seasonsData.map((season, index) => {
+                {seasonsData && seasonsData.map((season, index) => {
 
                     return  <Link key={index} to={`/MoviePage/:id${movieID}/Seasons/${season.id}/Episodes`}>
                                 <p className='season-link'>{season.number}</p>

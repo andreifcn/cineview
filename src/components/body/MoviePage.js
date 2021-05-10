@@ -35,11 +35,11 @@ const MoviePage = ({ match }) => {
                         movieData.image.medium 
                         : 'https://www.kevingage.com/assets/clapboard.png'}
                     alt='movie-poster' />
-                <h2 className='movie-page-title'>{movieData.name}</h2>
-                <p className='movie-page-summary'>{movieData.summary.innerHTML}</p>
-                <p id='movie-page-premiered'>Premiered: {movieData.premiered}</p>
-                <p id='movie-page-genre'>Genre: {movieData.genres[0]}</p>
-                <p id='imdb-id'>IMDB ID: {movieData.externals.imdb}</p>
+                <h2 className='movie-page-title'>{movieData && movieData.name}</h2>
+                <p className='movie-page-summary'>{movieData && movieData.summary.innerHTML}</p>
+                <p id='movie-page-premiered'>Premiered: {movieData && movieData.premiered}</p>
+                <p id='movie-page-genre'>Genre: {movieData && movieData.genres[0]}</p>
+                <p id='imdb-id'>IMDB ID: {movieData && movieData.externals.imdb}</p>
             </div>
             <div id='movie-seasons'>
                 <h2>Seasons</h2>

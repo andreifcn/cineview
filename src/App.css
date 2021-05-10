@@ -28,6 +28,8 @@ nav {
 .movie-list {
   position: relative;
   margin-bottom: 1%;
+  margin-top: 0%;
+  padding: 0;
 }
 
 #search-bar {
@@ -51,7 +53,7 @@ body {
 .see-all-movies {
   position: relative;
   right: 160px;
-  bottom: -10px;
+  bottom: 10px;
   font-size: 40px;
   text-align: right;
   text-decoration-color:  firebrick;
@@ -69,7 +71,7 @@ body {
 .category-title {
   position: relative;
   text-align: left;
-  bottom: -110px;
+  bottom: -90px;
   font-size: 60px;
   margin-left: 5%;
   color: white;

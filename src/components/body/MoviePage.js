@@ -14,6 +14,7 @@ const MoviePage = ({ match }) => {
     useEffect(() => {
         
         fetchMovieData();
+        window.scrollTo(0,0);
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const fetchMovieData = async () => {
@@ -28,7 +29,7 @@ const MoviePage = ({ match }) => {
 
     return (
         <div id='movie-page'>
-            <button className='back-button' onClick={history.goBack}>Back</button>
+            <button className='back-button' onClick={history.goBack}>{`<Back`}</button>
             <div id='movie-info'>
                 <img className='movie-page-image'
                     src={movieData && movieData.image !== null ? 

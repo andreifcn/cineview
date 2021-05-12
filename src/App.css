@@ -126,7 +126,7 @@ body {
 
 .movie-page-title {
   position: relative;
-  margin-left: 11%;
+  margin-left: 16%;
   color: white;
   top: -348px;
   left: -12%;
@@ -135,7 +135,7 @@ body {
 
 .movie-page-summary {
   position:relative;
-  color: white;
+  color:cornflowerblue;
   width: 38%;
   height: 350px;
   top: -70px;

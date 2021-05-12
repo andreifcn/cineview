@@ -93,6 +93,7 @@ body {
   left: 20%;
   top: 11px;
   font-size: 50px;
+  z-index: 100;
 }
 
 .all-movie-list {
@@ -116,26 +117,29 @@ body {
 }
 
 .movie-page-image {
-  position: absolute;
-  left: 30%;
-  top: 25px;
+  position: relative;
+  height: 295px;
+  width: 210px;
+  left: -12%;
+  top: 90px;
 }
 
 .movie-page-title {
-  position: absolute;
+  position: relative;
+  margin-left: 11%;
   color: white;
-  top: -60%;
-  left: 42%;
+  top: -348px;
+  left: -12%;
   font-size: 350%;
 }
 
 .movie-page-summary {
-  position:absolute;
+  position:relative;
   color: white;
   width: 38%;
   height: 350px;
-  top: 300%;
-  left: 42%;
+  top: -70px;
+  left: 29%;
   font-size: 16px;
 }
 
@@ -172,8 +176,8 @@ body {
 .movie-image{
   display: inline-block;
   vertical-align: middle;
-  height: 295px;
-  width: 210px;
+  max-height: 295px;
+  max-width: 210px;
   transition: transform .2s;
 }
 
@@ -182,7 +186,10 @@ body {
 }
 
 #movie-seasons {
-  text-align: center;
+  position: relative;
+  color: aliceblue;
+  top: -600px;
+  left: -5.5%;
 }
 
 .episode-pic {
@@ -191,16 +198,50 @@ body {
 }
 
 .season-link {
-  color: black;
-  position: absolute;
-  display: inline;
+  color: aliceblue;
+  position: relative;
+  display: inline-block;
   margin-right: 0.5%;
   font-size: 20px;
+  top: -20px;
+  left: 100px;
 }
 
 .episode-info {
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.116);
+}
+
+.episode-summary,
+#episode-title {
+  float: left;
+  margin-left: 5%;
+}
+
+
+.footer {
+  position: relative;
   text-align: center;
-  background-color: gray;
+  margin-top: 180px;
+  height: 180px;
+  clear: both;
+  background-color:royalblue;
+}
+
+#to-top-page {
+  color: aliceblue;
+  position: relative;
+  left: -20%;
+  bottom: -20%;
+}
+
+#tvmaze-link {
+  position: relative;
+  text-decoration: none;
+  bottom: 0px;
+  font-weight: 500;
+  color:aliceblue;
+  z-index: 100;
 }
 
 

@@ -44,13 +44,13 @@ const MoviePage = ({ match }) => {
                 <p id='imdb-id'>IMDB ID: {movieData && movieData.externals.imdb}</p>
             </div>
             <div id='movie-seasons'>
-                <h2>Seasons</h2>
+                <h2>Seasons:</h2>
                 {seasonsData && seasonsData.map((season, index) => {
 
                     return  <Link key={index} to={`/MoviePage/:id${movieID}/Seasons/${season.id}/Episodes`}>
-                                <p className='season-link'>{season.number}</p>
+                                <p className='season-link'>{index + 1}</p>
                             </Link>
-                })};
+                })}
             </div>
         </div>
     )

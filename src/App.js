@@ -7,6 +7,7 @@ import SeasonEpisodes from './components/body/SeasonEpisodes';
 import AllMovies from './components/body/AllMovies';
 import AllUpcomingEpisodes from './components/body/AllUpcomingEpisodes';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path='/MoviePage/:id/' exact component={MoviePage} />
                     <Route path='/MoviePage/:id/Seasons/:id/Episodes/' component={SeasonEpisodes} /> 
                     </Switch> 
+                    <Footer />
              </div>
         </Router>
     )

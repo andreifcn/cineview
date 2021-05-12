@@ -25,7 +25,7 @@ const SeasonEpisodes = ({ match }) => {
 
     return (
         <div id='episodes-list'>
-            <button className='back-button' onClick={history.goBack}>Back</button>
+            <button className='back-button' onClick={history.goBack}>{`<Back`}</button>
             <h1 className='category-title-all'>Season Episodes</h1>
             {episodes && episodes.map((episode, index) => {
 
@@ -39,7 +39,7 @@ const SeasonEpisodes = ({ match }) => {
                             </span>
                             <span className='episode-details'>
                                 <h4 id='episode-title'>{episode.number}. {episode.name}</h4>
-                                <p className='episode-summary'>{episode.summary}</p>
+                                <p className='episode-summary' dangerouslySetInnerHTML={{ __html: episode.summary }}></p>
                             </span>
                 </div>
             })}

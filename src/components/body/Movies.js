@@ -5,7 +5,7 @@ const Movies = ({ displayItems }) => {
 
     const moviesData = useSelector(state => state.movies[1]);
 
-    return <div className='movie-list'>
+    return <div className='movies'>
         {moviesData && moviesData.slice(0, displayItems).map((movie, index) => {
 
             return <Link key={index} to={`/MoviePage/:id${movie.id}`}>

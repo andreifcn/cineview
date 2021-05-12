@@ -26,31 +26,24 @@ nav {
 }
 
 .movie-list {
-  display:inline-block;
   position: relative;
-  margin-right: 10%;
   margin-bottom: 1%;
   margin-top: 0%;
   padding: 0;
 }
-
 
 #search-bar {
   border-style: solid;
   border-color: firebrick;
   border: 1px solid firebrick;
   position: relative;
-  left: 30%;
+  left: 35%;
   width: 600px;
   height: 30px;
   margin-top: 3%;
   background-color: black;
   text-align: center;
   color: firebrick;
-}
-
-#search-bar::-webkit-search-cancel-button{
-  color: red; 
 }
 
 body {
@@ -68,8 +61,11 @@ body {
 }
 
 #search-box {
-  position: relative;
   margin-bottom: -2%;
+}
+
+#search-bar::-webkit-search-cancel-button{
+  color: red; 
 }
 
 .category-title {
@@ -94,10 +90,9 @@ body {
   background-color: black;
   border: 1px solid black;
   color: firebrick;
-  left: 18%;
+  left: 20%;
   top: 11px;
   font-size: 50px;
- z-index: 100;
 }
 
 .all-movie-list {
@@ -116,53 +111,55 @@ body {
   text-align: center;
 }
 
-
+#movie-info {
+  align-items: center;
+}
 
 .movie-page-image {
-  position: relative;
-  left: -8%;
-  top: 100px;
+  position: absolute;
+  left: 30%;
+  top: 25px;
 }
 
 .movie-page-title {
   position: absolute;
   color: white;
-  left: 31%;
-  top: -2.3%;
-  font-size: 300%;
-}
-
-#movie-page-genre {
-  position: relative;
-  color: blue;
-  font-size: 40px;
-  top: -645px;
-  left: 5%;
-}
-
-#movie-page-premiered {
-  position: relative;
-  color: yellow;
-  left: 3%;
-  top: -530px;
-}
-
-#imdb-id {
-  position: relative;
-  color: orchid;
-  font-size: 20px;
-  top: -640px;
-  left: 3%;
+  top: -60%;
+  left: 42%;
+  font-size: 350%;
 }
 
 .movie-page-summary {
-  position:relative;
-  color:lightblue;
-  width: 47%;
+  position:absolute;
+  color: white;
+  width: 38%;
   height: 350px;
-  top: 100px;
-  left: 31%;
+  top: 300%;
+  left: 42%;
   font-size: 16px;
+}
+
+#movie-page-genre {
+  position: absolute;
+  color: blue;
+  font-size: 40px;
+  top: 35px;
+  left: 42%;
+}
+
+#imdb-id {
+  position: absolute;
+  color: orchid;
+  font-size: 20px;
+  top: 130px;
+  left: 42%;
+}
+
+#movie-page-premiered {
+  position: absolute;
+  color: yellow;
+  left: 42%;
+  top: 180px;
 }
 
 .episode-details {
@@ -178,7 +175,6 @@ body {
   height: 295px;
   width: 210px;
   transition: transform .2s;
-  max-width:min-content;
 }
 
 .movie-image:hover {

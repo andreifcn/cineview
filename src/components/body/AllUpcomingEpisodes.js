@@ -7,7 +7,7 @@ const AllUpcomingEpisodes = () => {
     const history = useHistory();
     
     return <div className='category-page'>
-        <button className='back-button' onClick={history.goBack}>Back</button>
+        <button className='back-button' onClick={history.goBack}>{`<Back`}</button>
         <h1 className='category-title-all'>All Upcoming</h1>
         <UpcomingEpisodes displayItems={undefined} />
     </div>

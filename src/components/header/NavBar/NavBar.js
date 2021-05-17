@@ -15,12 +15,6 @@ const NavBar = () => {
             <Link to='/'>
                 <p id='index-link' onClick={refreshSiteData}>CineView</p>
             </Link>
-            <Link to='/favourites'>
-                <p className='link'>about</p>
-            </Link>
-            <Link to='/user'>
-                <p className='link'>user</p>
-            </Link>
       </nav>
     )
 }

@@ -10,16 +10,18 @@ const MovieList = () => {
     const dispatch = useDispatch();
   
     useEffect(() => {
-
+        
         fetchMoviesData();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const fetchMoviesData = async () => {
 
         let currentDate = new Date().toISOString().slice(0, 10);
+        console.log(currentDate)
+
 
         Promise.all([
-            await fetch(`https://api.tvmaze.com/schedule?country=GB&date=${currentDate}`)
+            await fetch(`http://api.tvmaze.com/schedule?country=GB&date=${currentDate}`)
             .then(response => response.json()),
             await fetch('https://api.tvmaze.com/shows')
             .then(response => response.json())
@@ -30,7 +32,7 @@ const MovieList = () => {
             <h1 className='category-title'>Upcoming Today</h1>
             <Link className='see-all-movies' to={'/AllUpcoming/'}><p>+See All</p></Link>
             <UpcomingEpisodes displayItems={17} />
-            <h1 className='category-title'>Movies</h1>
+            <h1 className='category-title'>Series</h1>
             <Link className='see-all-movies' to={'/AllMovies/'}><p>+See All</p></Link>
             <Movies displayItems={17} />
         </div>

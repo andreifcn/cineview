@@ -19,7 +19,7 @@ const MovieList = () => {
         let currentDate = new Date().toISOString().slice(0, 10);
 
         Promise.all([
-            await fetch(`http://api.tvmaze.com/schedule?country=GB&date=${currentDate}`)
+            await fetch(`https://api.tvmaze.com/schedule?country=GB&date=${currentDate}`)
             .then(response => response.json()),
             await fetch('https://api.tvmaze.com/shows')
             .then(response => response.json())

@@ -17,8 +17,6 @@ const MovieList = () => {
     const fetchMoviesData = async () => {
 
         let currentDate = new Date().toISOString().slice(0, 10);
-        console.log(currentDate)
-
 
         Promise.all([
             await fetch(`http://api.tvmaze.com/schedule?country=GB&date=${currentDate}`)

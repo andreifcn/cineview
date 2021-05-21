@@ -4,6 +4,7 @@ import Movies from './Movies';
 const AllMovies = () => {
 
     const history = useHistory();
+    window.scrollTo(0,0);
 
     return <div className='movie-list'>
         <button className='back-button' onClick={history.goBack}>{`<Back`}</button>
